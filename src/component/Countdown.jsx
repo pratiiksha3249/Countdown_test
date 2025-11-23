@@ -1,7 +1,6 @@
 
-import { paste } from '@testing-library/user-event/dist/paste';
 import { useRef } from 'react';
-import React, { act, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Countdown = () => {
   const [time,setTime]=useState(0);
@@ -35,7 +34,7 @@ const Countdown = () => {
                  setTime((prev)=>prev-1)
             },1000)
           }
-          else if(time==0){
+          else if(time===0){
             clearInterval(intervalRef.current);
             setActive(false);
             alert('Your time is up');
